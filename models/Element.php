@@ -43,7 +43,7 @@ class Element extends \yii\db\ActiveRecord
         $modelStr = $this->model;
         $productModel = new $modelStr();
         
-        return $this->hasOne($productModel::className(), ['id' => 'item_id'])->one();
+        return $this->hasOne($productModel::className(), [$productModel->getPrimaryKey() => 'item_id'])->one();
     }
     
     public function getOrder()
