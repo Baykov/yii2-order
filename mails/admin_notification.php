@@ -57,7 +57,7 @@ use yii\widgets\DetailView;
         <?php foreach($model->elements as $element) { ?>
             <tr>
                 <td>
-                    <?=$element->product->getCartName(); ?>
+                    <?=$element->model->getCartName(); ?>
                     <?php if($element->description) { echo "({$element->description})"; } ?>
                     <?php
                     if($options = json_decode($element->options)) {
